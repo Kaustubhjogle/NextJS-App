@@ -18,6 +18,12 @@ const Navbar = () => {
           <li>
             <Link href="/about/company">Company</Link>
           </li>
+          <li>
+            <Link href="/register">Register</Link>
+          </li>
+          <li>
+            <Link href="/signup">Sign Up</Link>
+          </li>
         </ul>
       </div>
     </div>
