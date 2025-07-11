@@ -1,0 +1,21 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.5em;
+  margin-bottom: 1em;
+}
+
+.logo-container {
+  margin: 1em;
+}
+
+.navlink-list {
+  display: flex;
+}
+
+.navlink-list > li {
+  display: flex;
+  margin: 0.5em;
+  padding: 0.5em;
+}

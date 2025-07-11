@@ -3,8 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <h2>Initial Next JS Page</h2>From which place is lord vitthal and where
-      did he come from
+      <h2>Initial Next JS Page</h2>
     </div>
   );
 }
