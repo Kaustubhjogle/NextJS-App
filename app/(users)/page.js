@@ -12,7 +12,7 @@ export default function Home() {
             height={400}
             alt="hero-section-image"
           />
-          <p className="m-1">Default Quality</p>
+          <p className="m-1 font-roboto">Default Quality</p>
         </div>
         <div className="p-2 m-2 text-center">
           <Image
@@ -25,7 +25,7 @@ export default function Home() {
             blurDataURL=""
             placeholder="blur"
           />
-          <p className="m-1">High Quality</p>
+          <p className="m-1 font-oswald">High Quality</p>
         </div>
       </div>
     </div>
