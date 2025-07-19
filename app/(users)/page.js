@@ -1,10 +1,11 @@
 import Image from "next/image";
-import robot_img from '../../public/robot_hi.jpg'
+import robot_img from "../../public/robot_hi.jpg";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <div className="hero-section flex">
+      <div className="hero-section flex justify-center">
         <div className="p-2 m-2 text-center">
           <Image
             src="/robot_hi.jpg"
@@ -27,6 +28,14 @@ export default function Home() {
           />
           <p className="m-1 font-oswald">High Quality</p>
         </div>
+      </div>
+      <div className="flex w-full justify-center ">
+        <Link href="/server" className="m-2 p-2 ">
+          Server Component
+        </Link>
+        <Link href="/client" className="m-2 p-2 ">
+          Client Component
+        </Link>
       </div>
     </div>
   );
