@@ -6,6 +6,8 @@ const ProductList = () => {
   const paramData = useSearchParams();
   const brandArr = paramData.getAll("brand");
 
+  //http://localhost:3000/products?category=ac&sort=ltoh&brand=sony&brand=lg
+
   return (
     <div className="text-xl m-2">
       ProductList
