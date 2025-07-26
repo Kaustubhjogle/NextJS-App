@@ -3,7 +3,8 @@ import "./LoadingSpinner.css";
 
 const LoadingSpinner = () => {
   return (
-    <div className="bg-white rounded-full p-2 flex w-30 h-30">
+    <div className="flex w-full justify-center items-center text-center content-center">
+    <div className="bg-white rounded-full p-2 flex w-30 h-30 ">
       <svg
         aria-label="loader being flipped clockwise and circled by three white curves fading in and out"
         role="img"
@@ -181,6 +182,7 @@ const LoadingSpinner = () => {
           </g>
         </g>
       </svg>
+    </div>
     </div>
   );
 };
