@@ -4,6 +4,12 @@ const NationGuesspage = async (props) => {
   const paramData = await props.searchParams;
   const nameFromUrl = paramData.name;
 
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 3000);
+  });
+
   let responsefromApi;
   let firstGuessedNation;
 
