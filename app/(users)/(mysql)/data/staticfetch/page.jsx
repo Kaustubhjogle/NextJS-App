@@ -1,6 +1,8 @@
 import React from "react";
 import { db } from "@/config/mysql";
 
+export const revalidate = 60;
+
 const page = async () => {
   const [todoData] = await db.execute("SELECT * FROM todo_db.tasks");
 
