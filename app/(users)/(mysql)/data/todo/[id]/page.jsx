@@ -2,6 +2,13 @@ import { db } from "@/config/mysql";
 import { notFound } from "next/navigation";
 import React from "react";
 
+export async function generateStaticParams() {
+  const [todoListResponse] = await db.execute("SELECT id FROM todo_db.tasks");
+  return todoListResponse.map((item) => {
+    return { id: item?.id.toString() };
+  });
+}
+
 const getToDoParticularData = async (id) => {
   const [response] = await db.execute(
     `SELECT * FROM todo_db.tasks where id='${id}'`
