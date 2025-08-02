@@ -1,4 +1,5 @@
 import { db } from "@/config/mysql";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -26,7 +27,10 @@ const page = async (props) => {
   return (
     <div className="flex justify-center items-center m-2 flex-col">
       <div className="text-3xl">Todo List Info Page</div>
-      <div className="bg-white mt-20 p-4 text-black w-100 h-50 rounded-3xl flex items-center justify-center flex-col">
+        <div className="flex w-full justify-center">
+          < Link href={"/data/todo"}>Back</Link>
+        </div>
+      <div className="bg-white mt-10 p-4 text-black w-100 h-50 rounded-3xl flex items-center justify-center flex-col">
         <span className="text-3xl mb-2">Title: {toDoData?.title}</span>
         <span className="text-l m-2">Description: {toDoData?.description}</span>
         <span>Status: {toDoData?.completed === 1 ? "Done" : "Pending"}</span>

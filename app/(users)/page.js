@@ -29,12 +29,17 @@ export default function Home() {
           <p className="m-1 font-oswald">High Quality</p>
         </div>
       </div>
-      <div className="flex w-full justify-center ">
-        <Link href="/server" className="m-2 p-2 ">
+      <div className="flex w-full justify-center m-2 ">
+        <Link href="/server" className="p-2">
           Server Component
         </Link>
-        <Link href="/client" className="m-2 p-2 ">
+        <Link href="/client" className="p-2">
           Client Component
+        </Link>
+      </div>
+      <div className="flex w-full justify-center m-2">
+        <Link href="/data/todo" className="p-2s">
+          Todo List
         </Link>
       </div>
     </div>
