@@ -1,8 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useActionState, useEffect, useState } from "react";
 import { FormAction } from "./form.action";
 import Link from "next/link";
 
 const page = () => {
+  const [state, formAction, isPending] = useActionState(FormAction, null);
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    if (state && state.message) {
+      setShowMessage(true);
+    }
+  }, [state]);
+
+  useEffect(() => {
+    if (showMessage) {
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
+    }
+  }, [showMessage]);
+
   return (
     <div className="flex justify-center text-center flex-col">
       <div className="flex justify-center items-center flex-col">
@@ -13,7 +32,7 @@ const page = () => {
           </div>
           <div className="bg-white mt-10 p-4 text-black w-100 min-h-50 rounded-3xl flex items-center justify-center border-2 border-solid flex-col">
             <div>
-              <form className="space-y-4" action={FormAction}>
+              <form className="space-y-4" action={formAction}>
                 <div>
                   <label
                     htmlFor="title"
@@ -45,9 +64,21 @@ const page = () => {
                 <button
                   type="submit"
                   className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+                  disabled={isPending || showMessage}
                 >
-                  Submit
+                  {isPending ? "Loading.." : "Submit"}
                 </button>
+                {showMessage && (
+                  <div>
+                    <p
+                      className={
+                        state.success ? "text-green-600" : "text-red-600"
+                      }
+                    >
+                      {state?.message}
+                    </p>
+                  </div>
+                )}
               </form>
             </div>
           </div>
