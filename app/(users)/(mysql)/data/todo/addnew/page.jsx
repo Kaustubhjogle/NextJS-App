@@ -3,6 +3,7 @@
 import React, { useActionState, useEffect, useState } from "react";
 import { FormAction } from "./form.action";
 import Link from "next/link";
+import SubmitBtn from "./SubmitBtn";
 
 const page = () => {
   const [state, formAction, isPending] = useActionState(FormAction, null);
@@ -61,13 +62,7 @@ const page = () => {
                     className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   ></textarea>
                 </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
-                  disabled={isPending || showMessage}
-                >
-                  {isPending ? "Loading.." : "Submit"}
-                </button>
+                <SubmitBtn/> // to use useFormStatus, child component must be btwn form tag
                 {showMessage && (
                   <div>
                     <p
