@@ -4,8 +4,10 @@ import React, { useActionState, useEffect, useState } from "react";
 import { FormAction } from "./form.action";
 import Link from "next/link";
 import SubmitBtn from "./SubmitBtn";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  const router = useRouter();
   const [state, formAction, isPending] = useActionState(FormAction, null);
   const [showMessage, setShowMessage] = useState(false);
 
@@ -19,6 +21,7 @@ const page = () => {
     if (showMessage) {
       setTimeout(() => {
         setShowMessage(false);
+        if (state.success) router.push("/data/todo");
       }, 3000);
     }
   }, [showMessage]);
@@ -60,10 +63,10 @@ const page = () => {
                     name="description"
                     rows="4"
                     className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    ></textarea>
+                  ></textarea>
                 </div>
-                <SubmitBtn/>
-                 {/* to use useFormStatus, child component must be btwn form tag */}
+                <SubmitBtn />
+                {/* to use useFormStatus, child component must be btwn form tag */}
                 {showMessage && (
                   <div>
                     <p

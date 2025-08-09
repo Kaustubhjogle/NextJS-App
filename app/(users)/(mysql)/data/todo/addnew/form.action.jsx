@@ -12,8 +12,8 @@ export const FormAction = async (previouState, formData) => {
       `insert into todo_db.tasks (title, description, completed) VALUES (?,?, true)`,
       [title, description]
     );
-    // return { success: true, message: "Todo Item added successfully" };
-    redirect('/data/todo')
+    return { success: true, message: "Todo Item added successfully" };
+    // redirect('/data/todo') //only for server components
   } catch (e) {
     if (e.message === 'NEXT_REDIRECT') throw e;
     console.error(e);
